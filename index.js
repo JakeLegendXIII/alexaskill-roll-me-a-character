@@ -159,24 +159,19 @@ const THANK_YOU_MESSAGE = 'You\'re welcome!';
 const GET_ALEXA_MESSAGE = 'Thanks for including me! Here\'s my character: ';
 
 function rollStat() {
-    let sides = 6;
-    let rolls = [];
+  // Roll the dice 4 times and store the results in an array
+  const rolls = [];
+  for (let i = 0; i < 4; i++) {
+    rolls.push(Math.floor(Math.random() * 6) + 1);
+  }
 
-    for (let i = 0; i <= 3; i++) {
-        rolls.push(Math.floor(Math.random() * sides) + 1);
-    }
+  // Sort the rolls in descending order and take the top 3
+  const sortedRolls = rolls.sort((a, b) => b - a);
+  const highestRolls = sortedRolls.slice(0, 3);
 
-    var min = Math.min.apply(null, rolls);
-    rolls = rolls.filter((e) => { return e != min });
-    while (rolls.length != 3) {
-        rolls.push(min);
-    }
-
-    return rolls.reduce(getSum);
-}
-
-function getSum(total, num) {
-    return total + num;
+  // Calculate the total of the highest 3 rolls and return it
+  const total = highestRolls.reduce((sum, roll) => sum + roll, 0);
+  return total;
 }
 
 const skillBuilder = Alexa.SkillBuilders.standard();
