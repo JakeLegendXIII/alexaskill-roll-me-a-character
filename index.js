@@ -3,6 +3,15 @@
 
 const Alexa = require('ask-sdk');
 
+const SKILL_NAME = 'Roll me a character';
+const GET_MESSAGE = 'Here\'s your character: ';
+const REPEAT_MESSAGE = 'This was the previous character: ';
+const HELP_MESSAGE = 'You can say roll me a character, or, you can say exit... What can I help you with?';
+const HELP_REPROMPT = 'What can I help you with?';
+const STOP_MESSAGE = 'Goodbye!';
+const THANK_YOU_MESSAGE = 'You\'re welcome!';
+const GET_ALEXA_MESSAGE = 'Thanks for including me! Here\'s my character: ';
+
 const RollACharacterHandler = {
   canHandle(handlerInput) {
     const request = handlerInput.requestEnvelope.request;
@@ -148,15 +157,6 @@ const ErrorHandler = {
       .getResponse();
   },
 };
-
-const SKILL_NAME = 'Roll me a character';
-const GET_MESSAGE = 'Here\'s your character: ';
-const REPEAT_MESSAGE = 'This was the previous character: ';
-const HELP_MESSAGE = 'You can say roll me a character, or, you can say exit... What can I help you with?';
-const HELP_REPROMPT = 'What can I help you with?';
-const STOP_MESSAGE = 'Goodbye!';
-const THANK_YOU_MESSAGE = 'You\'re welcome!';
-const GET_ALEXA_MESSAGE = 'Thanks for including me! Here\'s my character: ';
 
 function rollStat() {
   // Roll the dice 4 times and store the results in an array

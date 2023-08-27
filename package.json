@@ -1,10 +1,11 @@
 {
   "name": "skill-sample-nodejs-fact-i18n",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "I18n version of fact skill.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:roll-me-a-character": "bestzip build/roll-me-a-character.zip *"
   },
   "keywords": [
     "alexa",
@@ -14,6 +15,8 @@
   "author": "Amazon.com",
   "license": "Apache-2.0",
   "dependencies": {
-    "ask-sdk": "^2.0.0"
+    "ask-sdk": "^2.14.0",
+    "aws-sdk": "2.1445.0",
+    "bestzip": "2.2.1"
   }
 }
